@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Nimons360</string>
+
+    <string name="title_login">Login</string>
+    <string name="title_home">Home</string>
+    <string name="title_map">Map</string>
+    <string name="title_families">Families</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_create_family">Create Family</string>
+
+    <string name="content_desc_profile">Open profile</string>
+    <string name="content_desc_create_family">Create family</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_search_families">Search family name</string>
+    <string name="hint_family_name">Family name</string>
+
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_edit_name">Edit Name</string>
+    <string name="action_create_family">Create Family</string>
+
+    <string name="label_my_families">My Families</string>
+    <string name="label_discover_families">Discover Families</string>
+    <string name="filter_all">All</string>
+    <string name="filter_my_families">My families</string>
+
+    <string name="placeholder_my_families">My families list will appear here.</string>
+    <string name="placeholder_discover_families">Discover families list will appear here.</string>
+    <string name="placeholder_families">Families list with pin/filter will appear here.</string>
+    <string name="profile_default_name">Nimons User</string>
+    <string name="profile_default_email">nimons@std.stei.itb.ac.id</string>
+    <string name="login_help">Use your NIM email and NIM password to sign in.</string>
+    <string name="create_family_icon_hint">Icon selection and API submit will be implemented next.</string>
+
+    <string name="error_login_required_fields">Email and password are required.</string>
+    <string name="error_family_name_required">Family name is required.</string>
+    <string name="message_create_family_todo">Create family pending API integration: %1$s</string>
+    <string name="message_edit_name_todo">Edit name bottom sheet will be implemented in next step.</string>
 </resources>

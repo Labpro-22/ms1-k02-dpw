@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.dpw.nimons360.features.auth.LoginFragment"
+        android:label="@string/title_login" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dpw.nimons360.features.home.HomeFragment"
+        android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.dpw.nimons360.features.map.MapFragment"
+        android:label="@string/title_map" />
+
+    <fragment
+        android:id="@+id/familiesFragment"
+        android:name="com.dpw.nimons360.features.families.FamiliesFragment"
+        android:label="@string/title_families" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.dpw.nimons360.features.profile.ProfileFragment"
+        android:label="@string/title_profile" />
+
+    <fragment
+        android:id="@+id/createFamilyFragment"
+        android:name="com.dpw.nimons360.features.families.CreateFamilyFragment"
+        android:label="@string/title_create_family" />
+</navigation>
+
