@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.signOutButton.setOnClickListener {
-            SessionManager(requireContext()).setLoggedIn(false)
+            SessionManager(requireContext().applicationContext).clearSession()
             findNavController().navigate(
                 R.id.loginFragment,
                 null,
