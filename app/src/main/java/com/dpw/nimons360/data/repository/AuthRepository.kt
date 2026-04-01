@@ -12,14 +12,14 @@ class AuthRepository(
 
     suspend fun login(email: String, password: String): LoginResult {
         return try {
-            val response = apiService.login(LoginRequestDto(email = email, password = password))
-            val responseBody = response.body()
+            val request = LoginRequestDto(email = email, password = password)
+            val response = apiService.login(request)
 
             if (!response.isSuccessful) {
                 return LoginResult.Error(mapHttpError(response.code()))
             }
 
-            val loginData = responseBody?.data
+            val loginData = response.body()?.data
             val token = loginData?.token.orEmpty()
             if (token.isBlank()) {
                 return LoginResult.Error("Respon login tidak valid. Coba lagi.")
@@ -40,6 +40,7 @@ class AuthRepository(
         }
     }
 
+
     private fun mapHttpError(code: Int): String {
         return when (code) {
             400 -> "Format email atau password tidak valid."
@@ -49,6 +50,7 @@ class AuthRepository(
         }
     }
 }
+
 
 sealed interface LoginResult {
     data object Success : LoginResult
