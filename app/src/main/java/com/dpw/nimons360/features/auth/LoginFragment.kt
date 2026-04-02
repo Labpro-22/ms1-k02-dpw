@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
@@ -44,10 +45,9 @@ class LoginFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             val email = binding.emailInput.text?.toString().orEmpty().trim()
             val password = binding.passwordInput.text?.toString().orEmpty().trim()
-            binding.loginMessage.text = ""
 
             if (email.isBlank() || password.isBlank()) {
-                binding.loginMessage.setText(R.string.error_login_required_fields)
+                showMessage(getString(R.string.error_login_required_fields))
                 return@setOnClickListener
             }
 
@@ -65,7 +65,7 @@ class LoginFragment : Fragment() {
                     }
 
                     is LoginResult.Error -> {
-                        binding.loginMessage.text = result.message
+                        showMessage(result.message)
                     }
                 }
                 setLoadingState(false)
@@ -87,6 +87,10 @@ class LoginFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }
 
