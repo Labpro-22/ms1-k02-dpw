@@ -25,12 +25,17 @@
     <string name="label_discover_families">Discover Families</string>
     <string name="filter_all">All</string>
     <string name="filter_my_families">My families</string>
+    <string name="filter_status_all">Showing all families</string>
+    <string name="filter_status_mine">Showing my families</string>
 
     <string name="placeholder_my_families">My families list will appear here.</string>
     <string name="placeholder_discover_families">Discover families list will appear here.</string>
     <string name="placeholder_families">Families list with pin/filter will appear here.</string>
+    <string name="placeholder_families_query">Preparing results for "%1$s". API list integration is next.</string>
     <string name="profile_default_name">Nimons User</string>
     <string name="profile_default_email">nimons@std.stei.itb.ac.id</string>
+    <string name="profile_unknown_name">Nimons User</string>
+    <string name="profile_unknown_email">No email available</string>
     <string name="login_help">Use your NIM email and NIM password to sign in.</string>
     <string name="create_family_icon_hint">Icon selection and API submit will be implemented next.</string>
 
@@ -38,4 +43,5 @@
     <string name="error_family_name_required">Family name is required.</string>
     <string name="message_create_family_todo">Create family pending API integration: %1$s</string>
     <string name="message_edit_name_todo">Edit name bottom sheet will be implemented in next step.</string>
+    <string name="placeholder_my_families_with_name">Hi %1$s, your joined families will appear here.</string>
 </resources>

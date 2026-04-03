@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Nimons360" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.Nimons360" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/blue_primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/blue_primary_dark</item>
+
+        <item name="android:colorBackground">@color/white_base</item>
+        <item name="colorSurface">@color/white_base</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <item name="colorError">@color/status_error</item>
+        <item name="colorOnError">@color/white</item>
+    </style>
 </resources>

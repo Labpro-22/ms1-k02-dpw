@@ -29,12 +29,15 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sessionManager = SessionManager(requireContext().applicationContext)
+        renderProfile(sessionManager)
+
         binding.editNameButton.setOnClickListener {
             Toast.makeText(requireContext(), R.string.message_edit_name_todo, Toast.LENGTH_SHORT).show()
         }
 
         binding.signOutButton.setOnClickListener {
-            SessionManager(requireContext().applicationContext).clearSession()
+            sessionManager.clearSession()
             findNavController().navigate(
                 R.id.loginFragment,
                 null,
@@ -43,9 +46,21 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    private fun renderProfile(sessionManager: SessionManager) {
+        val fullName = sessionManager.getFullName().ifBlank {
+            getString(R.string.profile_unknown_name)
+        }
+        val email = sessionManager.getEmail().ifBlank {
+            getString(R.string.profile_unknown_email)
+        }
+
+        binding.fullNameText.text = fullName
+        binding.emailText.text = email
+        binding.avatarText.text = fullName.firstOrNull()?.uppercase() ?: "N"
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-

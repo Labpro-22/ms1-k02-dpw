@@ -19,6 +19,10 @@ class SessionManager(context: Context) {
 
     fun getToken(): String = preferences.getString(KEY_TOKEN, "").orEmpty()
 
+    fun getFullName(): String = preferences.getString(KEY_FULL_NAME, "").orEmpty()
+
+    fun getEmail(): String = preferences.getString(KEY_EMAIL, "").orEmpty()
+
     fun clearSession() {
         preferences.edit()
             .remove(KEY_TOKEN)
@@ -36,4 +40,3 @@ class SessionManager(context: Context) {
         private const val KEY_EMAIL = "email"
     }
 }
-
